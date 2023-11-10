@@ -1,0 +1,47 @@
+<!-- Sidebar Section -->
+<aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+
+    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+
+        <h3 class="text-xl font-semibold mb-3 uppercase">
+            Tất cả thể loại
+        </h3>
+
+        @foreach ($categories as $category)
+
+           <a href="{{ route('by-category', $category) }}" class="text-semibold block py-2 px-3 rounded {{ request('category')?->slug === $category->slug ? 'bg-blue-600 text-white' : '' }}">
+              {{ $category->title }} ({{ $category->total }})
+           </a>
+            
+        @endforeach
+
+    </div>
+    
+<!-- Quảng cáo -->
+    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+        <p class="text-xl font-semibold pb-5">
+            {{ \App\Models\TextWidget::getTitle('quang-cao-side-bar')}}
+        </p>
+       
+        {!! \App\Models\TextWidget::getContent('quang-cao-side-bar')!!}
+
+        <a href="https://www.facebook.com/nguyennhat.tann.7" target="_blank" class="w-full bg-blue-600 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4" >
+             Contact
+        </a>
+    </div>
+
+    
+    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+        <p class="text-xl font-semibold pb-5">
+            {{ \App\Models\TextWidget::getTitle('quang-cao-side-bar')}}
+        </p>
+       
+        {!! \App\Models\TextWidget::getContent('quang-cao-side-bar')!!}
+
+        <a href="https://www.facebook.com/nguyennhat.tann.7" target="_blank" class="w-full bg-blue-600 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4" >
+             Contact
+        </a>
+    </div>
+
+</aside>
+

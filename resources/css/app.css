@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-family-karla{
+  font-family: 'Roboto', sans-serif;
+}
+
+pre{
+    padding: 1px;
+    background: #1a202c;
+    color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.header-video-container {
+    position: relative;
+    overflow: hidden; /* Ẩn phần nền màu đen vượt ra ngoài video */
+  }
+
+  .header-video-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.632); /* Màu đen với độ mờ 20% */
+    z-index: 1; /* Đặt lớp nền màu đen trên video */
+  }
+
+  video {
+    position: relative;
+    z-index: 0; /* Đảm bảo video hiển thị phía dưới lớp nền màu đen */
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  
+  .title-word {
+    animation: color-animation 4s linear infinite;
+  }
+  
+  .title-word-1 {
+    --color-1: #ff7124;
+    --color-2: #2bbaf8;
+    --color-3: #ff9795;
+  }
+  
+  .title-word-2 {
+    --color-1: #ffc64a;
+    --color-2: #99fff3;
+    --color-3: #237f86;
+  }
+  
+  .title-word-3 {
+    --color-1: #bef8f1;
+    --color-2: #ffa1a0;
+    --color-3: #bffff8;
+  }
+  
+  .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+
+
+
+
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #C2BEB2;
+  }
+  
+  .center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .table {
+    width: 345px;
+    height: 75px;
+    background-color: #DECBA4;
+    border-radius: 10px;
+  }
+  .table .monitor-wrapper {
+    background: #3E5151;
+    width: 337px;
+    border-radius: 10px;
+    height: 70px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  .table .monitor-wrapper .monitor {
+    width: 330px;
+    height: 65px;
+    border-radius: 10px;
+    background-color: #34363850;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: inset 0px 5px 10px 2px rgba(0, 0, 0, 0.3);
+  }
+  .table .monitor-wrapper .monitor p {
+    font-family: "VT323", monospace;
+    margin-top: 18px;
+    font-size: 50px;
+    position: relative;
+    display: inline-block;
+    animation: move 10s infinite linear;
+    color: #EBB55F;
+  }
+  
+  @keyframes move {
+    from {
+      left: 330px;
+    }
+    to {
+      left: -800px;
+    }
+  }
+  
